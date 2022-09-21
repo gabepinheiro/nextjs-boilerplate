@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint src --ext ts,tsx",
+    "lint:fix": "yarn lint --fix",
+    "prettier:check": "prettier --check \"src/**/*.{ts,tsx}\"",
+    "prettier:format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "dependencies": {
     "next": "12.3.1",
