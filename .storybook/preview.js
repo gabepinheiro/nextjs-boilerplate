@@ -1,4 +1,14 @@
 import { themes } from '@storybook/theming'
+import { addDecorator } from '@storybook/react'
+
+import { ChakraProvider } from '@chakra-ui/provider'
+import { extendedTheme } from '../src/styles/theme'
+
+addDecorator(storyFn => (
+  <ChakraProvider theme={extendedTheme}>
+    {storyFn()}
+  </ChakraProvider>
+))
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -10,5 +20,5 @@ export const parameters = {
   },
   docs: {
     theme: themes.dark
-  }
-}
+  },
+ }
