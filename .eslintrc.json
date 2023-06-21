@@ -7,11 +7,11 @@
   "extends": [
     "plugin:react/recommended",
     "standard",
-    "next",
     "plugin:jest/recommended",
     "plugin:jest/style",
     "plugin:storybook/recommended",
-    "prettier"
+    "prettier",
+    "next"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -19,15 +19,28 @@
       "jsx": true
     },
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "warnOnUnsupportedTypeScriptVersion": false
   },
-  "plugins": ["react", "@typescript-eslint", "jest"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "jest"
+  ],
   "overrides": [
     {
-      "files": ["./src/**/*.(spec|test).(ts|tsx)"],
-      "plugins": ["jest"],
-      "extends": ["plugin:jest/recommended"],
-      "rules": { "jest/prefer-expect-assertions": "off" }
+      "files": [
+        "./src/**/*.(spec|test).(ts|tsx)"
+      ],
+      "plugins": [
+        "jest"
+      ],
+      "extends": [
+        "plugin:jest/recommended"
+      ],
+      "rules": {
+        "jest/prefer-expect-assertions": "off"
+      }
     }
   ],
   "rules": {
